@@ -1,4 +1,4 @@
-#ifndef AUTO
+п»ї#ifndef AUTO
 #define AUTO
 
 #include <iostream>
@@ -13,22 +13,22 @@
 
 class Auto
 {
-    //кол-во объектов класса
+    //РєРѕР»-РІРѕ РѕР±СЉРµРєС‚РѕРІ РєР»Р°СЃСЃР°
     static size_t s_autoCount;
 
     private:    
-    // поля класса
+    // РїРѕР»СЏ РєР»Р°СЃСЃР°
     std::string m_brand;
     std::string m_model;
     double m_odometer;
 
-    //поля указатели на объекты других классов
+    //РїРѕР»СЏ СѓРєР°Р·Р°С‚РµР»Рё РЅР° РѕР±СЉРµРєС‚С‹ РґСЂСѓРіРёС… РєР»Р°СЃСЃРѕРІ
     Motor *m_motor;
     Gearbox *m_gearbox;
     Rims *m_rims;
     Tyres *m_tyres;
     
-    // оператор помещения в поток
+    // РѕРїРµСЂР°С‚РѕСЂ РїРѕРјРµС‰РµРЅРёСЏ РІ РїРѕС‚РѕРє
     friend std::ostream&
         operator<<(std::ostream& output, const Auto& obj)
     {
@@ -45,7 +45,7 @@ class Auto
     }
 
 public:
-    /// конструкторы
+    /// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂС‹
 
     Auto();
     Auto(const std::string &brand,
@@ -69,23 +69,23 @@ public:
          const Rims &rims,
          const Tyres &tyres);
 
-    // конструктор копирования
+    // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
     Auto(const Auto &other);
     
-    //конструктор перемещения
+    //РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРµСЂРµРјРµС‰РµРЅРёСЏ
     Auto(Auto &&other);
 
-    // деструктор
+    // РґРµСЃС‚СЂСѓРєС‚РѕСЂ
     ~Auto();
 
-    ///операторы
-    // оператор копирования
+    ///РѕРїРµСЂР°С‚РѕСЂС‹
+    // РѕРїРµСЂР°С‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
     const Auto& operator=(const Auto &right);
     
-    // оператор перемещения
+    // РѕРїРµСЂР°С‚РѕСЂ РїРµСЂРµРјРµС‰РµРЅРёСЏ
     Auto &operator=(Auto &&right);
 
-    /// геттеры
+    /// РіРµС‚С‚РµСЂС‹
     std::string getBrand() const;
     std::string getModel() const;
     
@@ -97,7 +97,7 @@ public:
     
     static const size_t getObjectCount();
 
-    /// сеттеры
+    /// СЃРµС‚С‚РµСЂС‹
     void setBrand(const std::string &brand);
     void setModel(const std::string &model);
     void setOdometer(const double odometer);
@@ -122,22 +122,22 @@ public:
                   const unsigned short height,
                   const unsigned short radius);
 
-    // завожу машину
+    // Р·Р°РІРѕР¶Сѓ РјР°С€РёРЅСѓ
     void turnOn();
 
-    // глушу машину
+    // РіР»СѓС€Сѓ РјР°С€РёРЅСѓ
     void turnOff();
 
-    // передача вверх
+    // РїРµСЂРµРґР°С‡Р° РІРІРµСЂС…
     void gearUp();
 
-    // передача вниз
+    // РїРµСЂРµРґР°С‡Р° РІРЅРёР·
     void gearDown();
 
-    // начать движение авто
+    // РЅР°С‡Р°С‚СЊ РґРІРёР¶РµРЅРёРµ Р°РІС‚Рѕ
     int startMoving(const double);
 
-    // замедлятся
+    // Р·Р°РјРµРґР»СЏС‚СЃСЏ
     void stopMoving();
 };
 

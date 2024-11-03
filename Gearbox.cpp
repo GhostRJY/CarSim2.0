@@ -1,4 +1,4 @@
-#include "Gearbox.h"
+ï»¿#include "Gearbox.h"
 
 size_t Gearbox::s_gearboxCount = 0;
 
@@ -30,7 +30,7 @@ Gearbox::Gearbox(const char * marking, const int gearCount)
     std::cout << "Gearbox constructed\n";
 }
 
-// â êîíñòðóêòîðå êîïèðîâàíèÿ èñï-þ èíèöèàëèçàöèþ ò.ê. ïåðåäàâàåìûé îáúåêò â êà÷åñòâå ïàðàìåòðà íå ìîæåò áûòü ñîçäàí íå ïî ïðàâèëàì.
+// Ð² ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€Ðµ ÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ Ð¸ÑÐ¿-ÑŽ Ð¸Ð½Ð¸Ñ†Ð¸Ð°Ð»Ð¸Ð·Ð°Ñ†Ð¸ÑŽ Ñ‚.Ðº. Ð¿ÐµÑ€ÐµÐ´Ð°Ð²Ð°ÐµÐ¼Ñ‹Ð¹ Ð¾Ð±ÑŠÐµÐºÑ‚ Ð² ÐºÐ°Ñ‡ÐµÑÑ‚Ð²Ðµ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð° Ð½Ðµ Ð¼Ð¾Ð¶ÐµÑ‚ Ð±Ñ‹Ñ‚ÑŒ ÑÐ¾Ð·Ð´Ð°Ð½ Ð½Ðµ Ð¿Ð¾ Ð¿Ñ€Ð°Ð²Ð¸Ð»Ð°Ð¼.
 Gearbox::Gearbox(const Gearbox& other)
 {
     setMarking(other.m_marking);
@@ -126,7 +126,7 @@ void Gearbox::setGearPos(const unsigned short position)
 
 void Gearbox::setGearCount(const int count)
 {
-    // óñòàíàâëèâàþ êîëè÷åñòâî ñòóïåíåé ïåðåäà÷
+    // ÑƒÑÑ‚Ð°Ð½Ð°Ð²Ð»Ð¸Ð²Ð°ÑŽ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÑ‚ÑƒÐ¿ÐµÐ½ÐµÐ¹ Ð¿ÐµÑ€ÐµÐ´Ð°Ñ‡
     if (count >= 2 && count < 11)
         this->m_gearCount = count + 1;
     else

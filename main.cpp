@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include "Auto.h"
 #include "Driver.h"
 
@@ -21,7 +21,7 @@ int main()
     std::cout << driver;
     //std::cout << driver1;
     
-    //ñèìóëÿöèÿ ïîåçäêè
+    //ÑÐ¸Ð¼ÑƒÐ»ÑÑ†Ð¸Ñ Ð¿Ð¾ÐµÐ·Ð´ÐºÐ¸
  
      driver.sitInCar();
      driver.startEngine();

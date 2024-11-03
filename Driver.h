@@ -1,4 +1,4 @@
-#ifndef DRIVER_H
+п»ї#ifndef DRIVER_H
 #define DRIVER_H
 #include "Auto.h"
 #include <iostream>
@@ -15,7 +15,7 @@ private:
     double m_energy;
     bool m_inAuto{ false };
 
-    //оператор ввода в поток
+    //РѕРїРµСЂР°С‚РѕСЂ РІРІРѕРґР° РІ РїРѕС‚РѕРє
     friend std::ostream &operator<<(std::ostream &out, const Driver &driver) {
         out << "Driver first name [" << driver.m_fname << "] last name [" << driver.m_lname << "] with experience [" << driver.m_experience << "] energy [" << driver.m_energy << "]\n";
         out << "drive car\n"
@@ -28,7 +28,7 @@ public:
     
 static const size_t getDriverCount();
 
-    /// конструкторы
+    /// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂС‹
     Driver();
 
     Driver(const char *firstName,
@@ -37,48 +37,48 @@ static const size_t getDriverCount();
            const int experience,
            const double energy);
 
-    ///копирование
-    //конструктор копирования
+    ///РєРѕРїРёСЂРѕРІР°РЅРёРµ
+    //РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
     Driver(const Driver &other);
 
-    //оператор копирования
+    //РѕРїРµСЂР°С‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
     const Driver &operator=(const Driver &right);
 
-    ///перемещение
-    //конструктор перемещения
+    ///РїРµСЂРµРјРµС‰РµРЅРёРµ
+    //РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРµСЂРµРјРµС‰РµРЅРёСЏ
     Driver(Driver &&other);
 
-    //оператор перемещения
+    //РѕРїРµСЂР°С‚РѕСЂ РїРµСЂРµРјРµС‰РµРЅРёСЏ
     Driver &operator=(Driver &&right);
 
     ~Driver();
     
-    /// сеттеры
+    /// СЃРµС‚С‚РµСЂС‹
     void setFirstName(const char *fName);
     void setLastName(const char *lName);
     void setAuto(const Auto &automobile);
     void setExperience(const int experience);
     void setEnergy(const double energy);
     
-    /// геттеры
+    /// РіРµС‚С‚РµСЂС‹
     const char* getFirstName() const;
     const char* getLastName() const;
     Auto getAuto() const;
     int getExperience() const;
     double getEnergy() const;
 
-    /// методы для водителя
-    // отдохнуть, чтоб обновить энергию
+    /// РјРµС‚РѕРґС‹ РґР»СЏ РІРѕРґРёС‚РµР»СЏ
+    // РѕС‚РґРѕС…РЅСѓС‚СЊ, С‡С‚РѕР± РѕР±РЅРѕРІРёС‚СЊ СЌРЅРµСЂРіРёСЋ
     void goSleep();
-    // сесть в машину
+    // СЃРµСЃС‚СЊ РІ РјР°С€РёРЅСѓ
     void sitInCar();
-    // выйти из машины
+    // РІС‹Р№С‚Рё РёР· РјР°С€РёРЅС‹
     void goOut();
-    // завести авто
+    // Р·Р°РІРµСЃС‚Рё Р°РІС‚Рѕ
     void startEngine();
-    // начать поездку(сколько проехать)
+    // РЅР°С‡Р°С‚СЊ РїРѕРµР·РґРєСѓ(СЃРєРѕР»СЊРєРѕ РїСЂРѕРµС…Р°С‚СЊ)
     bool startTrip(const int kms);
-    // окончить поездку
+    // РѕРєРѕРЅС‡РёС‚СЊ РїРѕРµР·РґРєСѓ
     void finishTrip();
 };
 

@@ -1,4 +1,4 @@
-#ifndef TYRES
+п»ї#ifndef TYRES
 #define TYRES
 #include <string>
 #include <iostream>
@@ -20,32 +20,32 @@ private:
     }
 
 public:
-    /// конструкторы
-    // Конструктор по умолчанию
+    /// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂС‹
+    // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
     Tyres();
 
-    // Конструктор с параметрами
+    // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
     Tyres(const char *brand,
           unsigned short width,
           unsigned short height,
           unsigned short radius);
     
-    // Конструктор копирования
+    // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
     Tyres(const Tyres &other);
 
-    //Деструктор
+    //Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
     ~Tyres();
 
-    // операторы
+    // РѕРїРµСЂР°С‚РѕСЂС‹
     Tyres& operator=(const Tyres &right);
 
-    // Геттеры
+    // Р“РµС‚С‚РµСЂС‹
     const char* getBrand() const;
     unsigned short getWidth() const;
     unsigned short getHeight() const;
     unsigned short getRadius() const;
 
-    // Сеттеры
+    // РЎРµС‚С‚РµСЂС‹
     void setBrand(const char *brand);
     void setWidth(const unsigned short width);
     void setHeight(const unsigned short height);

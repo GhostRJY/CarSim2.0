@@ -1,4 +1,4 @@
-#ifndef GEARBOX
+п»ї#ifndef GEARBOX
 #define GEARBOX
 #include <string>
 #include <vector>
@@ -21,54 +21,54 @@ private:
         return output;
     }
 
-    // прячу фун-ию от пользователя чтоб он не мог изменить кол-во передач после создания
+    // РїСЂСЏС‡Сѓ С„СѓРЅ-РёСЋ РѕС‚ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ С‡С‚РѕР± РѕРЅ РЅРµ РјРѕРі РёР·РјРµРЅРёС‚СЊ РєРѕР»-РІРѕ РїРµСЂРµРґР°С‡ РїРѕСЃР»Рµ СЃРѕР·РґР°РЅРёСЏ
     void setGearCount(const int count);
 
 public:
 
 static const size_t getGearboxCount();
 
-    /// конструкторы
-    // конструктор по умолчанию
+    /// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂС‹
+    // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
     Gearbox();
 
-    // конструктор с параметрами
+    // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
     Gearbox(const char *marking, const int gearCount);
 
-    // конструктор копирования
+    // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
     Gearbox(const Gearbox &other);
 
-    //конструктор переноса
+    //РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРµСЂРµРЅРѕСЃР°
     Gearbox(Gearbox &&other);
 
     ~Gearbox();
 
-    /// операторы
-    //оператор копирования
+    /// РѕРїРµСЂР°С‚РѕСЂС‹
+    //РѕРїРµСЂР°С‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
     const Gearbox& operator=(const Gearbox &right);
     
-    //оператор переноса
+    //РѕРїРµСЂР°С‚РѕСЂ РїРµСЂРµРЅРѕСЃР°
     Gearbox &operator=(Gearbox &&right);
 
-    // сеттеры
+    // СЃРµС‚С‚РµСЂС‹
     void setMarking(const char *marking);
 
     void setGearPos(const unsigned short position);
 
-    // геттеры
+    // РіРµС‚С‚РµСЂС‹
     unsigned short getGearPos() const;
     unsigned short getGearCount() const;
     const char * getMarking() const;
     std::vector<std::string> getGears() const;
 
-    // работа с коробкой передач
+    // СЂР°Р±РѕС‚Р° СЃ РєРѕСЂРѕР±РєРѕР№ РїРµСЂРµРґР°С‡
     void shiftUp();
 
     void shiftDown();
 
     void shiftNeutral();
 
-    // отображение состояний
+    // РѕС‚РѕР±СЂР°Р¶РµРЅРёРµ СЃРѕСЃС‚РѕСЏРЅРёР№
     void printGear();
 };
 

@@ -1,4 +1,4 @@
-#include "Motor.h"
+ï»¿#include "Motor.h"
 
 size_t Motor::s_motorCount = 0;
 
@@ -32,7 +32,7 @@ Motor::Motor(const char * marking,
 
 Motor::Motor(const Motor& other)
 {
-    //äëÿ ïðàâèëüíîãî âûäåëåíèÿ ïàìÿòè
+    //Ð´Ð»Ñ Ð¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð¾Ð³Ð¾ Ð²Ñ‹Ð´ÐµÐ»ÐµÐ½Ð¸Ñ Ð¿Ð°Ð¼ÑÑ‚Ð¸
     setMarking(other.m_marking);
     this->m_volume = other.m_volume;
     this->m_work = other.m_work;
@@ -124,7 +124,7 @@ const double Motor::getVolume() const
     return this->m_volume;
 }
 
-// ñåòòåðû
+// ÑÐµÑ‚Ñ‚ÐµÑ€Ñ‹
 void Motor::setMarking(const char * mark)
 {
     if(this->m_marking != nullptr) {

@@ -1,4 +1,4 @@
-#ifndef RIMS
+п»ї#ifndef RIMS
 #define RIMS
 
 #include <string>
@@ -21,41 +21,41 @@ class Rims
     }
 
     public:
-    // конструкторы
+    // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂС‹
 
-    // конструктор по умолчанию
+    // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
     Rims();
 
-    // конструктор с параметрами
+    // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
     Rims(const char *brand,
          unsigned short width,
          unsigned short height,
          unsigned short radius);
 
-    // конструктор копирования
+    // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
     Rims(const Rims &other);
 
     Rims(Rims &&other)noexcept;
 
     ~Rims();
 
-    // операторы
+    // РѕРїРµСЂР°С‚РѕСЂС‹
     const Rims &operator=(const Rims &right);
     Rims &operator=(Rims &&right);
 
-    // геттеры
+    // РіРµС‚С‚РµСЂС‹
     const char * getBrand() const;
     unsigned short getWidth() const;
     unsigned short getHeight() const;
     unsigned short getRadius() const;
 
-    // сеттеры
+    // СЃРµС‚С‚РµСЂС‹
     void setBrand(const char *brand);
     void setWidth(const unsigned short width);
     void setHeight(const unsigned short height);
     void setRadius(const unsigned short radius);
 
-    // состояния
+    // СЃРѕСЃС‚РѕСЏРЅРёСЏ
     void spinWheels(bool);
 };
 

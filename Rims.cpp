@@ -1,4 +1,4 @@
-#include "Rims.h"
+ï»¿#include "Rims.h"
 
 Rims::Rims() {
     this->setBrand("Rims");
@@ -23,7 +23,7 @@ Rims::Rims(const char *brand,
     std::cout << "Rims constructed\n";
 }
 
-// ïðèìåð èíèöèàëèçèðóþùåãî êîíñòðóêòîðà
+// Ð¿Ñ€Ð¸Ð¼ÐµÑ€ Ð¸Ð½Ð¸Ñ†Ð¸Ð°Ð»Ð¸Ð·Ð¸Ñ€ÑƒÑŽÑ‰ÐµÐ³Ð¾ ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€Ð°
 Rims::Rims(const Rims &other)
     :m_width{other.m_width},
     m_height{other.m_height},
@@ -92,7 +92,7 @@ Rims &Rims::operator=(Rims &&right) {
     return *this;
 }
 
-// Ãåòòåðû
+// Ð“ÐµÑ‚Ñ‚ÐµÑ€Ñ‹
 const char * Rims::getBrand() const {
     return this->m_brand;
 }
@@ -109,7 +109,7 @@ unsigned short Rims::getRadius() const {
     return this->m_radius;
 }
 
-// ñåòòåðû
+// ÑÐµÑ‚Ñ‚ÐµÑ€Ñ‹
 void Rims::setBrand(const char *brand) {
     
     if(this->m_brand != nullptr) {

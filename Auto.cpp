@@ -1,4 +1,4 @@
-#include "Auto.h"
+п»ї#include "Auto.h"
 
 size_t Auto::s_autoCount = 0;
 
@@ -45,7 +45,7 @@ Auto::Auto(const std::string& brand,
      m_tyres{nullptr}
     
 {
-    // делегирую инициализацию полей класса
+    // РґРµР»РµРіРёСЂСѓСЋ РёРЅРёС†РёР°Р»РёР·Р°С†РёСЋ РїРѕР»РµР№ РєР»Р°СЃСЃР°
     this->setBrand(brand);
 
     this->setModel(model);
@@ -195,7 +195,7 @@ const Auto& Auto::operator=(const Auto& right)
         
     }
 
-    return *this; // позволяет последовательное присваивание a=b=c
+    return *this; // РїРѕР·РІРѕР»СЏРµС‚ РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕРµ РїСЂРёСЃРІР°РёРІР°РЅРёРµ a=b=c
 }
 
 Auto &Auto::operator=(Auto &&right) {
@@ -226,7 +226,7 @@ Auto &Auto::operator=(Auto &&right) {
     return *this;
 }
 
-/// <геттеры>
+/// <РіРµС‚С‚РµСЂС‹>
 
 std::string Auto::getBrand() const
 {
@@ -267,7 +267,7 @@ const size_t Auto::getObjectCount() {
     return s_autoCount;
 }
 
-/// <сеттеры>
+/// <СЃРµС‚С‚РµСЂС‹>
 
 void Auto::setBrand(const std::string& brand)
 {
@@ -395,7 +395,7 @@ void Auto::gearDown()
 
 int Auto::startMoving(const double driveKM)
 {
-    // пробег одной поездки нужен для водительского опыта
+    // РїСЂРѕР±РµРі РѕРґРЅРѕР№ РїРѕРµР·РґРєРё РЅСѓР¶РµРЅ РґР»СЏ РІРѕРґРёС‚РµР»СЊСЃРєРѕРіРѕ РѕРїС‹С‚Р°
     int kms{ 0 };
     if (m_motor->getWork())
     {
@@ -412,7 +412,7 @@ int Auto::startMoving(const double driveKM)
             else
                 m_rims->spinWheels(true);
 
-            // увеличиваю пробег авто
+            // СѓРІРµР»РёС‡РёРІР°СЋ РїСЂРѕР±РµРі Р°РІС‚Рѕ
             m_odometer += 1.0;
             ++kms;
         }

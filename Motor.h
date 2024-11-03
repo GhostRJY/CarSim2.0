@@ -1,4 +1,4 @@
-#ifndef MOTOR
+п»ї#ifndef MOTOR
 #define MOTOR
 
 #include <string>
@@ -10,7 +10,7 @@ class Motor
     static size_t s_motorCount;
 
 private:
-    // поля
+    // РїРѕР»СЏ
     char * m_marking;
     bool m_work;
     double m_volume;
@@ -25,39 +25,39 @@ private:
 public:
 
 static const size_t getMotorCount();
-    /// конструкторы
-    // конструктор по умолчанию
+    /// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂС‹
+    // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
     Motor();
 
-    // конструктор с параметрами
+    // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
     Motor(const char *marking,
           double volume);
 
-    // конструктор копирования
+    // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
     Motor(const Motor &other);
     
-    //конструктор переноса
+    //РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРµСЂРµРЅРѕСЃР°
     Motor(Motor &&other);
 
-    //деструктор
+    //РґРµСЃС‚СЂСѓРєС‚РѕСЂ
     ~Motor();
     
-    ///операторы
-    // оператор присваивания копирования
+    ///РѕРїРµСЂР°С‚РѕСЂС‹
+    // РѕРїРµСЂР°С‚РѕСЂ РїСЂРёСЃРІР°РёРІР°РЅРёСЏ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
     const Motor& operator=(const Motor &right);
     Motor &operator=(Motor &&right);
 
-    // работа с двигателем
+    // СЂР°Р±РѕС‚Р° СЃ РґРІРёРіР°С‚РµР»РµРј
     void startEngine();
 
     void offEngine();
 
-    // геттеры
+    // РіРµС‚С‚РµСЂС‹
     bool getWork() const;
     const char * getMarking() const;
     const double getVolume() const;
 
-    // сеттеры
+    // СЃРµС‚С‚РµСЂС‹
     void setMarking(const char *mark);
     void setWork(const bool state);
     void setVolume(const double volume);

@@ -1,4 +1,4 @@
-#include "Driver.h"
+п»ї#include "Driver.h"
 #define DEBUG
 
 size_t Driver::s_driverCount = 0;
@@ -8,7 +8,7 @@ const size_t Driver::getDriverCount() {
 }
 
 Driver::Driver()
-// инициализирую все указатели 0 из-за того что там лежат мусорные значения и соответственно сеттеры отрабатывают не правильно
+// РёРЅРёС†РёР°Р»РёР·РёСЂСѓСЋ РІСЃРµ СѓРєР°Р·Р°С‚РµР»Рё 0 РёР·-Р·Р° С‚РѕРіРѕ С‡С‚Рѕ С‚Р°Рј Р»РµР¶Р°С‚ РјСѓСЃРѕСЂРЅС‹Рµ Р·РЅР°С‡РµРЅРёСЏ Рё СЃРѕРѕС‚РІРµС‚СЃС‚РІРµРЅРЅРѕ СЃРµС‚С‚РµСЂС‹ РѕС‚СЂР°Р±Р°С‚С‹РІР°СЋС‚ РЅРµ РїСЂР°РІРёР»СЊРЅРѕ
     : m_fname{ nullptr },
     m_lname{ nullptr },
     m_ptrAuto{ nullptr },
@@ -33,7 +33,7 @@ Driver::Driver(const char* firstName,
     : m_fname{ nullptr },
     m_lname{ nullptr },
     m_ptrAuto{ nullptr },
-    m_inAuto{false} // инициализирую все указатели 0 из-за того что там лежат мусорные значения и соответственно сеттеры отрабатывают не правильно
+    m_inAuto{false} // РёРЅРёС†РёР°Р»РёР·РёСЂСѓСЋ РІСЃРµ СѓРєР°Р·Р°С‚РµР»Рё 0 РёР·-Р·Р° С‚РѕРіРѕ С‡С‚Рѕ С‚Р°Рј Р»РµР¶Р°С‚ РјСѓСЃРѕСЂРЅС‹Рµ Р·РЅР°С‡РµРЅРёСЏ Рё СЃРѕРѕС‚РІРµС‚СЃС‚РІРµРЅРЅРѕ СЃРµС‚С‚РµСЂС‹ РѕС‚СЂР°Р±Р°С‚С‹РІР°СЋС‚ РЅРµ РїСЂР°РІРёР»СЊРЅРѕ
 {
     setLastName(lastName);
     setFirstName(firstName);
@@ -80,7 +80,7 @@ const Driver &Driver::operator=(const Driver &right) {
     return *this;
 }
 
-//конструктор перемещения
+//РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРµСЂРµРјРµС‰РµРЅРёСЏ
 Driver::Driver(Driver &&other)
     :m_ptrAuto{other.m_ptrAuto},
      m_fname{other.m_fname},
@@ -101,7 +101,7 @@ Driver::Driver(Driver &&other)
 #endif
 }
 
-//оператор перемещения
+//РѕРїРµСЂР°С‚РѕСЂ РїРµСЂРµРјРµС‰РµРЅРёСЏ
 Driver &Driver::operator=(Driver &&right) {
     if(&right == this)
         return *this;
@@ -269,20 +269,20 @@ void Driver::goOut()
     std::cout << "Driver " << m_fname << ' ' << m_lname << " go out\n";
     m_inAuto = false;
 }
-// завести авто
+// Р·Р°РІРµСЃС‚Рё Р°РІС‚Рѕ
 void Driver::startEngine()
 {
     std::cout << "Driver " << m_fname << ' ' << m_lname << " start engine \n";
     m_ptrAuto->turnOn();
 }
-// начать поездку(сколько проехать)
+// РЅР°С‡Р°С‚СЊ РїРѕРµР·РґРєСѓ(СЃРєРѕР»СЊРєРѕ РїСЂРѕРµС…Р°С‚СЊ)
 bool Driver::startTrip(const int kms)
 {
     if (m_energy > 0)
     {
         m_experience += m_ptrAuto->startMoving(kms);
         finishTrip();
-        // усталость после поездки
+        // СѓСЃС‚Р°Р»РѕСЃС‚СЊ РїРѕСЃР»Рµ РїРѕРµР·РґРєРё
         m_energy -= (kms * 12 / 100);
         std::cout << "the driver received " << kms << " experience\n"
             << "driver's energy: " << m_energy << '\n';
@@ -294,7 +294,7 @@ bool Driver::startTrip(const int kms)
         return false;
     }
 }
-// окончить поездку
+// РѕРєРѕРЅС‡РёС‚СЊ РїРѕРµР·РґРєСѓ
 void Driver::finishTrip()
 {
     m_ptrAuto->stopMoving();
