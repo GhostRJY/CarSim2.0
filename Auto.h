@@ -29,8 +29,7 @@ class Auto
     Tyres *m_tyres;
     
     // оператор помещения в поток
-    friend std::ostream&
-        operator<<(std::ostream& output, const Auto& obj)
+    friend std::ostream &operator<<(std::ostream& output, const Auto& obj)
     {
         output << std::setw(15) << "\nAuto brand [" << obj.m_brand << "] model [" << obj.m_model << "] odometer: "
             << std::setprecision(2) << std::fixed << std::showpoint << obj.m_odometer << " km\n"
@@ -43,6 +42,86 @@ class Auto
 
         return output;
     }
+
+    ///вывод из потока
+    friend std::istream &operator>>(std::istream &input, Auto &obj) {
+
+
+
+        std::cout << "Enter values for Automobile\n";
+               
+
+        do {
+
+            std::cout << "Producer -> ";
+            input >> std::setw(20) >> obj.m_brand;
+
+            if(input.fail()) {
+                input.clear();
+                input.ignore(32767, '\n');
+                std::cout << "Please try again.\n";
+
+            } else
+                break;
+
+
+        } while(true);
+        
+        input.clear();
+        input.ignore(32767, '\n');
+
+        do {
+
+            std::cout << "Model -> ";
+            input >> std::setw(20) >> obj.m_model;
+
+            if(input.fail()) {
+                input.clear();
+                input.ignore(32767, '\n');
+                std::cout << "Please try again.\n";
+
+            } else
+                break;
+
+
+        } while(true);
+
+        input.clear();
+        input.ignore(32767, '\n');
+
+        double odometer{0.0};
+
+        do {
+
+            std::cout << "odometer display -> ";
+            input >> std::setw(10) >> odometer;
+
+            if(input.fail() || odometer < 0) {
+                input.clear();
+                input.ignore(32767, '\n');
+                std::cout << "Please try again.\n";
+
+            } else
+                break;
+
+
+        } while(true);
+
+        obj.setOdometer(odometer);
+
+        input.clear();
+        input.ignore(32767, '\n');
+
+        input >> *obj.m_motor;
+        input >> *obj.m_gearbox;
+        input >> *obj.m_rims;
+        input >> *obj.m_tyres;
+
+
+        return input;
+    }
+
+    std::string toString() const;
 
 public:
     /// конструкторы
@@ -84,6 +163,15 @@ public:
     
     // оператор перемещения
     Auto &operator=(Auto &&right);
+
+    //операторы сравнения
+    bool operator==(const Auto &right)const;
+    bool operator!=(const Auto &right)const;
+    bool operator>(const Auto &right)const;
+    bool operator<(const Auto &right)const;
+
+    //оператор привидения к типу
+    explicit operator std::string() const;
 
     /// геттеры
     std::string getBrand() const;

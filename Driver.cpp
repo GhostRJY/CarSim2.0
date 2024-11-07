@@ -301,3 +301,17 @@ void Driver::finishTrip()
     std::cout << "The driver has reached his destination\n";
     m_ptrAuto->turnOff();
 }
+
+bool Driver::operator==(const Driver &right)const {
+    return this->m_experience == right.m_experience;
+}
+bool Driver::operator!=(const Driver &right)const {
+    return !(*this == right);
+}
+
+bool Driver::operator>(const Driver &right)const {
+    return this->m_experience > right.m_experience;
+}
+bool Driver::operator<(const Driver &right)const {
+    return !(*this > right);
+}

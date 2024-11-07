@@ -182,3 +182,32 @@ void Gearbox::printGear()
 {
     std::cout << "Gearbox is in [" << m_currentGear[m_gearPos] << "] position\n";
 }
+
+bool Gearbox::operator==(const Gearbox &right) const {
+    return this->m_gearCount == right.m_gearCount;
+}
+
+bool Gearbox::operator!=(const Gearbox &right) const {
+    return !(*this == right);
+}
+
+bool Gearbox::operator>(const Gearbox &right) const {
+    return this->m_gearCount > right.m_gearCount;
+}
+
+bool Gearbox::operator<(const Gearbox &right) const {
+    return !(*this > right);
+}
+
+std::string Gearbox::toString()const {
+    std::string str{"Gearbox type ["};
+    str += this->m_marking;
+    str += "], gearcount [";    
+    str += std::to_string(this->m_gearCount);
+    str += ']';
+    return str;
+}
+
+Gearbox::operator std::string() const {
+    return toString();
+}

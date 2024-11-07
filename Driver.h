@@ -11,6 +11,7 @@ private:
     char* m_fname;
     char* m_lname;
     Auto* m_ptrAuto;
+
     int m_experience;
     double m_energy;
     bool m_inAuto{ false };
@@ -22,6 +23,108 @@ private:
             << *driver.m_ptrAuto;
 
         return out;
+    }
+
+    ///вывод из потока
+    friend std::istream &operator>>(std::istream &input, Driver &obj) {
+
+
+
+        std::cout << "Enter info for Driver\n";
+
+        //создаю буфер для Имени и Фамилии
+        char *nameBuf = new char[50];
+
+        do {
+
+            std::cout << "First name -> ";
+            input >> std::setw(50) >> nameBuf;
+
+            if(input.fail()) {
+                input.clear();
+                input.ignore(32767, '\n');
+                std::cout << "Please try again.\n";
+
+            } else
+                break;
+
+
+        } while(true);
+
+        obj.setFirstName(nameBuf);
+
+        //очищаю поток если что-то еще останется после ввода
+        input.clear();
+        input.ignore(32767, '\n');
+        
+        do {
+
+            std::cout << "Last name -> ";
+            input >> std::setw(50) >> nameBuf;
+
+            if(input.fail()) {
+                input.clear();
+                input.ignore(32767, '\n');
+                std::cout << "Please try again.\n";
+
+            } else
+                break;
+
+
+        } while(true);
+
+        //удаляю буфер Имен
+        delete[] nameBuf;
+
+        input.clear();
+        input.ignore(32767, '\n');
+
+        int exp{0};
+
+        do {
+
+            std::cout << "Experience of driving -> ";
+            input >> exp;
+
+            if(input.fail() || exp<0) {
+                input.clear();
+                input.ignore(32767, '\n');
+                std::cout << "Please try again.\n";
+
+            } else
+                break;
+
+
+        } while(true);
+
+        obj.setExperience(exp);
+
+        input.clear();
+        input.ignore(32767, '\n');
+
+        double enrg{0};
+
+        do {
+
+            std::cout << "Energy of driver -> ";
+            input >> enrg;
+
+            if(input.fail() || enrg<0 || enrg>100.00) {
+                input.clear();
+                input.ignore(32767, '\n');
+                std::cout << "Please try again.\n";
+
+            } else
+                break;
+
+        } while(true);
+        
+        input.clear();
+        input.ignore(32767, '\n');
+
+        input >> *obj.m_ptrAuto;
+
+        return input;
     }
 
 public:
@@ -53,6 +156,12 @@ static const size_t getDriverCount();
 
     ~Driver();
     
+    //операторы сравнения
+    bool operator==(const Driver &right)const;
+    bool operator!=(const Driver &right)const;
+    bool operator>(const Driver &right)const;
+    bool operator<(const Driver &right)const;
+
     /// сеттеры
     void setFirstName(const char *fName);
     void setLastName(const char *lName);

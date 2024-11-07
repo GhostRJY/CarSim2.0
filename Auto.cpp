@@ -438,3 +438,40 @@ void Auto::stopMoving()
 
     std::cout << "Auto is stopped\n";
 }
+
+bool Auto::operator==(const Auto &right)const {
+    return *this->m_motor == *right.m_motor;
+}
+
+bool Auto::operator!=(const Auto &right)const {
+    return !(*this == right);
+}
+bool Auto::operator>(const Auto &right)const {
+    return *this->m_motor > *right.m_motor;
+}
+bool Auto::operator<(const Auto &right)const {
+    return !(*this > right);
+}
+
+std::string Auto::toString()const {
+    std::string str{"Auto brand ["};
+    str += this->m_brand;
+    str += "] model [";
+    str += this->m_model;
+    str += "] odometer [";
+    str += std::to_string(this->m_odometer);
+    str += ' ';
+    str += (std::string)*this->m_motor;
+    str += ' ';
+    str += (std::string)*this->m_gearbox;
+    str += ' ';
+    str += (std::string)*this->m_rims;
+    str += ' ';
+    str += (std::string)*this->m_tyres;
+
+    return str;
+}
+
+Auto::operator std::string() const {
+    return toString();
+}

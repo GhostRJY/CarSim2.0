@@ -119,3 +119,46 @@ void Tyres::setRadius(const unsigned short radius)
         this->m_radius = 13;
     }
 }
+
+//операторы спавнения
+bool Tyres::operator==(const Tyres &right) const {
+    if(this->m_width == right.m_width &&
+       this->m_height == right.m_height &&
+       this->m_radius == right.m_radius)
+        return true;
+
+    return false;
+}
+bool Tyres::operator!=(const Tyres &right) const {
+    return !(*this == right);
+}
+
+bool Tyres::operator>(const Tyres &right) const {
+    if(this->m_width > right.m_width ||
+       this->m_height > right.m_height ||
+       this->m_radius > right.m_radius)
+        return true;
+
+    return false;
+}
+bool Tyres::operator<(const Tyres &right) const {
+    return !(*this>right);
+}
+
+std::string Tyres::toString()const {
+    std::string str{"Brand ["};
+    str += this->m_brand;
+    str += "] size [";
+    str +=std::to_string(this->m_width);
+    str += 'x';
+    str += std::to_string(this->m_height);
+    str += " radius ";
+    str += std::to_string(this->m_radius);
+    str += ']';
+    return str;
+}
+
+Tyres::operator std::string()const {
+    
+    return toString();
+}

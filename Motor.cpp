@@ -152,3 +152,32 @@ void Motor::setVolume(const double volume)
         this->m_volume = 0.6;
     }
 }
+
+bool Motor::operator==(const Motor &right) const {
+    return this->m_volume == right.m_volume;
+}
+
+bool Motor::operator!=(const Motor &right) const {
+    return !(*this == right);
+}
+
+bool Motor::operator>(const Motor &right) const {
+    return this->m_volume > right.m_volume;
+}
+
+bool Motor::operator<(const Motor &right) const {
+    return !(*this > right);
+}
+
+std::string Motor::toString()const {
+    std::string str{"Motor type ["};
+    str += this->m_marking;
+    str += "], volume [";
+    str += std::to_string(this->m_volume);
+    str += ']';
+    return str;
+}
+
+Motor::operator std::string() const {
+    return toString();
+}
